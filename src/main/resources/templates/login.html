@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="../static/jquery.js" th:src="@{/jquery.js}"></script>
+</head>
+<body>
+    <center>
+        <h1>商务会员管理系统</h1>
+        <form action="javascript:;"  method="post" onsubmit="return tologin();">
+            用户名: <input name="name" type="text"/><br/>
+            密码: <input name="password" type="password"/><br/>
+            <input type="submit" value="登录"/>
+        </form>
+    </center>
+
+        <script>
+            function tologin(){
+                var name =  $("[name = name]").val();
+                var password =  $("[name = password]").val();
+                if (name == '' || password=='') {
+                    alert("请填写完整信息");
+                    return false;
+                }
+                if (name.length<6 || password.length<6){
+                    alert("用户名和密码至少为6位");
+                    return false;
+                }
+                $.post("/login?name="+name+"&password="+password,function (data) {
+
+                    if (data!="成功"){
+                        alert(data);
+                    }else {
+                        location.href='list';
+                    }
+                })
+            }
+        </script>
+</body>
+</html>

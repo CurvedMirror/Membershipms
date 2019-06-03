@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <script src="../static/jquery.js" th:src="@{/jquery.js}"></script>
+    <script>
+        function exit() {
+            if (confirm("确认要退出系统吗")) {
+                location.href = 'logout';
+            }
+        }
+        function ckCommit() {
+            var id = $("[name=id]").val();
+            var oldPassword1 = $("[name=oldPassword1]").val();
+            var oldPassword2 = $("[name=oldPassword2]").val();
+            var newPassword1 = $("[name=newPassword1]").val();
+            var newPassword2 = $("[name=newPassword2]").val();
+
+            if (oldPassword2==''|| newPassword1=='' || newPassword2==''){
+                alert("请填写完整信息");
+                return false;
+            }
+            if (oldPassword1!=oldPassword2){
+                alert("旧密码输入错误");
+                return false;
+            }
+            if (newPassword1.length<6){
+                alert("密码不能少于6位");
+                return false;
+            }
+            if (newPassword1!=newPassword2){
+                alert("两次密码不同");
+                return false;
+            }
+
+            $.post("modify?password="+newPassword1+"&id="+id,function (data) {
+                if (data=="ok"){
+                    alert("修改成功");
+                    location.href="login.html";
+                }
+                else {
+                    alert("修改失败");
+                }
+            })
+
+        }
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="2"><h1>商务会员管理系统</h1></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            用户名 <span th:text="${session.user.name}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            用户类型:<span th:text="${session.user.typeName}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:;" th:onclick="'javascript:exit();'">退出</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li><a th:href="@{toModify}">修改密码</a></li>
+                <li><a th:href="@{list}">查看所有会员</a></li>
+            </ul>
+        </td>
+
+        <td>
+            <div style="border: 3px solid black">
+                <h1>修改密码</h1>
+                <form action="javascript:;" method="post" onsubmit="return ckCommit();">
+                    <input type="hidden" name="oldPassword1" th:value="${session.user.password}">
+                    <input type="hidden" name="id" th:value="${session.user.id}">
+                    <table>
+                        <tr>
+                            <td>原始密码</td>
+                            <td><input type="password" name="oldPassword2"></td>
+                        </tr>
+                        <tr>
+                            <td>新密码</td>
+                            <td><input type="password" name="newPassword1"></td>
+                        </tr>
+                        <tr>
+                            <td>确认密码</td>
+                            <td><input type="password" name="newPassword2"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <a href="list"><input type="button"  value="返回"></a>
+                                <input type="submit" value="修改">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>

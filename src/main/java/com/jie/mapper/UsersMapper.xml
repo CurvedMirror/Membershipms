@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jie.mapper.UsersMapper">
+    <select id="login" resultType="com.jie.pojo.Users">
+        SELECT u.*,ut.name as typeName FROM `users` u,user_type ut
+        WHERE u.NAME = #{name} and   u.type_id=ut.id
+    </select>
+
+    <select id="getUsersByPage" resultType="com.jie.pojo.Users">
+        SELECT u.*,ut.name as typeName FROM `users` u,user_type ut
+        <where>
+            u.type_id=ut.id
+            <if test="name!=null and name!=''">
+               and u.`name` LIKE '%' #{name} '%'
+            </if>
+        </where>
+        ORDER BY  last_modify_time DESC
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <select id="getCount" resultType="java.lang.Integer">
+        SELECT count(*) FROM `users`
+        <where>
+            <if test="name!=null and name!=''">
+                `name` LIKE '%' #{name} '%'
+            </if>
+        </where>
+        ORDER BY  last_modify_time DESC
+    </select>
+
+    <update id="updatePwd" >
+        UPDATE
+          `membershipms`.`users`
+        SET
+          `password` = #{password}
+        WHERE `id` = #{id} ;
+
+    </update>
+</mapper>

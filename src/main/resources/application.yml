@@ -1,0 +1,12 @@
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.jie.pojo
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql:///membershipms
+    username: root
+    password: 123
+  jackson:
+    date-format: yyyy-MM-dd

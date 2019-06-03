@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <script src="../static/jquery.js" th:src="@{/jquery.js}"></script>
+    <script>
+        function exit() {
+           if ( confirm("确认要退出系统吗")) {
+               location.href='logout';
+           }
+        }
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="2"><h1>商务会员管理系统</h1></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            用户名 <span th:text="${session.user.name}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            用户类型:<span th:text="${session.user.typeName}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:;"  th:onclick="'javascript:exit();'">退出</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li><a th:href="@{toModify}">修改密码</a></li>
+                <li><a th:href="@{list}">查看所有会员</a></li>
+            </ul>
+        </td>
+
+        <td>
+            <div style="border: 3px solid black">
+                <h1>会员管理</h1>
+                <form action="list" method="get">
+                    用户名: <input name="name" type="text" th:value="${name}"/>
+                    <input type="submit" value="查找"/>
+                </form>
+
+                <h2 th:if="${#lists.isEmpty(page.list)}"> 抱歉没有数据</h2>
+                <table border="1" th:if="${!#lists.isEmpty(page.list)}">
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>用户类别</th>
+                        <th>用户状态</th>
+                        <th>最后修改时间</th>
+                    </tr>
+                    <tr th:each="user:${page.list}">
+                        <td th:text="${userStat.index+1}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.typeName}"></td>
+                        <td th:text="${user.status==0?'已冻结':'正常'}"></td>
+                        <td th:text="${#dates.format(user.getLast_modify_time(),'yyyy-MM-dd')}"></td>
+                    </tr>
+                </table>
+
+                <a th:href="@{|list?pageNo=1&name=${name}|}">首页</a>
+                <a th:if="${pageNo>1}" th:href="@{|list?pageNo=${page.pageNo-1}&name=${name}|}">上一页</a>
+                <a th:if="${pageNo<page.pageCount}" th:href="@{|list?pageNo=${page.pageNo+1}&name=${name}|}">下一页</a>
+                <a th:href="@{|list?pageNo=${page.pageCount}&name=${name}|}">尾页</a>
+                第<span th:text="${pageNo}"></span>页/共<span th:text="${page.pageCount}"></span>页
+            </div>
+        </td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
