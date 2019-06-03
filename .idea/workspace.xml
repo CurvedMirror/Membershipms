@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e66bf1d3-3b1e-48c4-94b1-ddeef5706e15" name="Default" comment="" />
+    <list default="true" id="e66bf1d3-3b1e-48c4-94b1-ddeef5706e15" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../这两天的作业/Membershipms/comment/memberships.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../这两天的作业/Membershipms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../这两天的作业/Membershipms/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,17 +48,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Users.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../这两天的作业/Membershipms/src/main/java/com/jie/pojo/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="162">
+              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding>
                 <element signature="e#405#406#0" expanded="true" />
                 <element signature="e#441#442#0" expanded="true" />
                 <element signature="e#872#873#0" expanded="true" />
                 <element signature="e#903#904#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memberships.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../这两天的作业/Membershipms/comment/memberships.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -139,6 +151,9 @@
     <replaceStrings>
       <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../这两天的作业/Membershipms" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -232,6 +247,7 @@
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -247,6 +263,11 @@
             <path>
               <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
               <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
+              <item name="comment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -254,53 +275,6 @@
               <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Membershipms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Membershipms" type="b2602c69:ProjectViewProjectNode" />
@@ -445,12 +419,12 @@
       <workItem from="1559440292719" duration="9864000" />
       <workItem from="1559454376895" duration="3432000" />
       <workItem from="1559475501547" duration="140000" />
-      <workItem from="1559522860047" duration="2251000" />
+      <workItem from="1559522860047" duration="2515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38575000" />
+    <option name="totallyTimeSpent" value="38839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -464,7 +438,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32953683" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5652921" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.3298969" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -536,13 +510,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../这两天的作业/Membershipms/src/main/java/com/jie/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
@@ -904,14 +871,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../这两天的作业/Membershipms/src/main/java/com/jie/pojo/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="162">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
             <element signature="e#405#406#0" expanded="true" />
             <element signature="e#441#442#0" expanded="true" />
             <element signature="e#872#873#0" expanded="true" />
             <element signature="e#903#904#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../这两天的作业/Membershipms/comment/memberships.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
