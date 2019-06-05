@@ -1,5 +1,6 @@
 package com.jie.controller;
 
+import com.google.code.kaptcha.Constants;
 import com.jie.pojo.Page;
 import com.jie.pojo.Users;
 import com.jie.service.UsersService;
@@ -33,13 +34,16 @@ public class UserController {
 
     @PostMapping("login")
     @ResponseBody
-    public String login(String name, String password, HttpServletRequest request){
+    public String login(String name, String password,String code, HttpServletRequest request){
         Map<String,Object> map = new HashMap<>();
         map.put("name",name);
+        String oldCode = (String) request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
         String message = null;
         Users login = usersService.login(map);
-        if (login==null){
-           message = "用户名不存在sfs";
+        if (!code.equals(oldCode)){
+            message="验证码错误";
+        }else if (login==null){
+           message = "用户名不存在";
         }else if (!login.getPassword().equals(password)){
             message = "密码错误";
         }else if (login.getStatus()==0){
