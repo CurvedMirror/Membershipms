@@ -9,8 +9,8 @@
     <center>
         <h1>商务会员管理系统</h1>
         <form action="javascript:;"  method="post" onsubmit="return tologin();">
-            用户名: <input name="name" type="text"/><br/>
-            密码: <input name="password" type="password"/><br/>
+            用户名: <input name="name" type="text" th:value="${name}"/><br/>
+            密码: <input name="password" type="password" th:value="${password}"/><br/>
             验证码:<input name="code">
             <br/>
             <img src="code" ><br/>
@@ -34,12 +34,12 @@
                     alert("用户名和密码至少为6位");
                     return false;
                 }
-                $.post("/login?name="+name+"&password="+password+"&code="+code,function (data) {
+                $.post("/info/login?name="+name+"&password="+password+"&code="+code,function (data) {
 
                     if (data!="成功"){
                         alert(data);
                     }else {
-                        location.href='list';
+                        location.href='info/list';
                     }
                 })
             }

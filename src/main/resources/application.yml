@@ -8,5 +8,4 @@ spring:
     url: jdbc:mysql:///membershipms
     username: root
     password: 123
-  jackson:
-    date-format: yyyy-MM-dd
+

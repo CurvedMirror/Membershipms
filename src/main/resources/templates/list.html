@@ -26,7 +26,7 @@
     <script>
         function exit() {
            if ( confirm("确认要退出系统吗")) {
-               location.href='logout';
+               location.href='/info/logout';
            }
         }
     </script>
@@ -49,15 +49,15 @@
     <tr>
         <td>
             <ul>
-                <li><a th:href="@{toModify}">修改密码</a></li>
-                <li><a th:href="@{list}">查看所有会员</a></li>
+                <li><a th:href="@{/toModify}">修改密码</a></li>
+                <li><a th:href="@{/info/list}">查看所有会员</a></li>
             </ul>
         </td>
 
         <td>
             <div style="border: 3px solid black">
                 <h1>会员管理</h1>
-                <form action="list" method="get">
+                <form action="/info/list" method="get">
                     用户名: <input name="name" type="text" th:value="${name}"/>
                     <input type="submit" value="查找"/>
                 </form>
@@ -80,10 +80,10 @@
                     </tr>
                 </table>
 
-                <a th:href="@{|list?pageNo=1&name=${name}|}">首页</a>
-                <a th:if="${pageNo>1}" th:href="@{|list?pageNo=${page.pageNo-1}&name=${name}|}">上一页</a>
-                <a th:if="${pageNo<page.pageCount}" th:href="@{|list?pageNo=${page.pageNo+1}&name=${name}|}">下一页</a>
-                <a th:href="@{|list?pageNo=${page.pageCount}&name=${name}|}">尾页</a>
+                <a th:href="@{|/info/list?pageNo=1&name=${name}|}">首页</a>
+                <a th:if="${pageNo>1}" th:href="@{|/info/list?pageNo=${page.pageNo-1}&name=${name}|}">上一页</a>
+                <a th:if="${pageNo<page.pageCount}" th:href="@{|/info/list?pageNo=${page.pageNo+1}&name=${name}|}">下一页</a>
+                <a th:href="@{|/info/list?pageNo=${page.pageCount}&name=${name}|}">尾页</a>
                 第<span th:text="${pageNo}"></span>页/共<span th:text="${page.pageCount}"></span>页
             </div>
         </td>
